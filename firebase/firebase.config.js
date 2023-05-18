@@ -4,13 +4,14 @@ import { initializeApp } from "firebase/app";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+console.log('environment variable', import.meta.env.VITE_APIKEY)
 const firebaseConfig = {
-    apiKey: "AIzaSyAbj3ICip26MxEn36TSq57jcnbPIMCqmTs",
-    authDomain: "cooking-toys-client.firebaseapp.com",
-    projectId: "cooking-toys-client",
-    storageBucket: "cooking-toys-client.appspot.com",
-    messagingSenderId: "88298809646",
-    appId: "1:88298809646:web:e3cc0af364240454ccf2bf"
+    apiKey: import.meta.env.VITE_APIKEY,
+    authDomain: import.meta.env.VITE_AUTHDOMAIN,
+    projectId: import.meta.env.VITE_PROJECTID,
+    storageBucket: import.meta.env.VITE_STORAGEBUCKET,
+    messagingSenderId: import.meta.env.VITE_MESSAGINGSENDERID,
+    appId: import.meta.env.VITE_APPID
 };
 
 // Initialize Firebase
