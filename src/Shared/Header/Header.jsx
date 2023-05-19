@@ -15,7 +15,7 @@ const Header = () => {
                         <li><a>My Toys</a></li>
                         <li><Link to='/addatoy'>Add A Toy</Link></li>
                         <li><Link to='/blog'>Blog</Link></li>
-                        <li><Link to='/login'>Login</Link></li>
+                        {/* <li><Link to='/login'>Login</Link></li> */}
                     </ul>
                 </div>
                 <img className='w-12 h-12' src={logo} alt="" />
@@ -29,10 +29,11 @@ const Header = () => {
                     <li><a>My Toys</a></li>
                     <li><Link to='/addatoy'>Add A Toy</Link></li>
                     <li><Link to='/blog'>Blog</Link></li>
-                    <li><Link to='/login'>Login</Link></li>
+                    {/* <li><Link to='/login'>Login</Link></li> */}
                 </ul>
             </div>
-            <div className="navbar-end">
+            <div className="navbar-end gap-1">
+                <Link to='/login'>Login</Link>
                 <a >Profile</a>
             </div>
         </div>
