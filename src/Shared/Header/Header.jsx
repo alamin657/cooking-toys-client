@@ -1,7 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import logo from '../../assets/images/kitchen-set.png'
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Provider/AuthProvider';
 const Header = () => {
+    const { user, logOut } = useContext(AuthContext);
+    const handleLogout = () => {
+        logOut()
+            .then()
+            .catch(error => {
+                console.log(error)
+            })
+
+    }
     return (
         <div className="navbar bg-base-100">
             <div className="navbar-start">
@@ -10,11 +20,22 @@ const Header = () => {
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                     </label>
                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                        <li><Link to='/'>Home</Link></li>
-                        <li><Link to='/alltoys'>All Toys</Link></li>
-                        <li><a>My Toys</a></li>
-                        <li><Link to='/addatoy'>Add A Toy</Link></li>
-                        <li><Link to='/blog'>Blog</Link></li>
+                        {
+                            user ?
+                                <>
+                                    <li><Link to='/'>Home</Link></li>
+                                    <li><Link to='/alltoys'>All Toys</Link></li>
+                                    <li><Link to='/addatoy'>Add A Toy</Link></li>
+                                    <li><Link to='/blog'>Blog</Link></li>
+                                    <li><a>My Toys</a></li>
+                                </>
+                                :
+                                <>
+                                    <li><Link to='/'>Home</Link></li>
+                                    <li><Link to='/alltoys'>All Toys</Link></li>
+                                    <li><Link to='/blog'>Blog</Link></li>
+                                </>
+                        }
                         {/* <li><Link to='/login'>Login</Link></li> */}
                     </ul>
                 </div>
@@ -24,17 +45,33 @@ const Header = () => {
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu  menu-horizontal px-1">
-                    <li><Link to='/'>Home</Link></li>
-                    <li><Link to='/alltoys'>All Toys</Link></li>
-                    <li><a>My Toys</a></li>
-                    <li><Link to='/addatoy'>Add A Toy</Link></li>
-                    <li><Link to='/blog'>Blog</Link></li>
-                    {/* <li><Link to='/login'>Login</Link></li> */}
+                    {
+                        user ?
+                            <>
+                                <li><Link to='/'>Home</Link></li>
+                                <li><Link to='/alltoys'>All Toys</Link></li>
+                                <li><Link to='/addatoy'>Add A Toy</Link></li>
+                                <li><Link to='/blog'>Blog</Link></li>
+                                <li><a>My Toys</a></li>
+                            </>
+                            :
+                            <>
+                                <li><Link to='/'>Home</Link></li>
+                                <li><Link to='/alltoys'>All Toys</Link></li>
+                                <li><Link to='/blog'>Blog</Link></li>
+                            </>
+                    }
                 </ul>
             </div>
             <div className="navbar-end gap-1">
-                <Link to='/login'>Login</Link>
-                <a >Profile</a>
+                {
+                    user && <img title={user?.displayName} className="rounded-full w-8 mr-1" src={user?.photoURL}></img>
+                }
+
+                {
+                    user ? <button onClick={handleLogout} className="btn btn-active">SignOut</button> :
+                        <Link to='/login'><button className="btn btn-active">SignIn</button></Link>
+                }
             </div>
         </div>
     );
