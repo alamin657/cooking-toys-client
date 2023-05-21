@@ -5,7 +5,7 @@ const ShopByCategory = () => {
     const [categories, setCategories] = useState('Remote Control');
     const [subCategories, setsubCategories] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:4000/shopByCategory/${categories}`)
+        fetch(`https://cooking-toys-server-alamin657.vercel.app/shopByCategory/${categories}`)
             .then(res => res.json())
             .then(data => {
                 setsubCategories(data)

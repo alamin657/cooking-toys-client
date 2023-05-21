@@ -1,17 +1,41 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../../Provider/AuthProvider';
 import SingleMyToys from './SingleMyToys';
+import useTitle from '../../../hooks/useTitle';
 
 const MyToys = () => {
+    useTitle('mytoys')
     const { user } = useContext(AuthContext);
-    const [myToys, setMyToys] = useState([])
+    const [cookingToys, setCookingToys] = useState([])
+
     useEffect(() => {
-        fetch(`http://localhost:4000/mytoys/${user?.email}`)
+        fetch(`https://cooking-toys-server-alamin657.vercel.app/mytoys/${user?.email}`)
             .then(res => res.json())
             .then(data => {
-                setMyToys(data)
+                setCookingToys(data)
             })
     }, [user])
+
+
+    const handleDelete = _id => {
+        const proceed = confirm('Are you sure want to deleted')
+        if (proceed) {
+            fetch(`https://cooking-toys-server-alamin657.vercel.app/toys/${_id}`, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                    if (data.deletedCount > 0) {
+                        alert('deleted succesfull')
+                        const remaining = cookingToys.filter(cookingToy => cookingToy._id !== _id)
+                        console.log(remaining)
+                        setCookingToys(remaining);
+                    }
+                })
+        }
+
+    }
     return (
         <div className="overflow-x-auto w-full">
             <table className="table w-full">
@@ -30,9 +54,10 @@ const MyToys = () => {
                 <tbody>
 
                     {
-                        myToys.map(myToy => <SingleMyToys
+                        cookingToys.map(myToy => <SingleMyToys
                             key={myToy._id}
-                            myToy={myToy}></SingleMyToys>)
+                            myToy={myToy}
+                            handleDelete={handleDelete}></SingleMyToys>)
                     }
 
                 </tbody>

@@ -4,9 +4,11 @@ import Gallery from '../Gallery/Gallery';
 import ShopByCategory from './ShopByCategory/ShopByCategory';
 import MeaningFullToys1 from '../MeaningFulllToys1/MeaningFullToys1';
 import MeaningFullToys2 from '../MeaningFullToys2/MeaningFullToys2';
+import useTitle from '../../../hooks/useTitle';
 
 
 const Home = () => {
+    useTitle('Home')
     return (
         <div>
             <Banner></Banner>

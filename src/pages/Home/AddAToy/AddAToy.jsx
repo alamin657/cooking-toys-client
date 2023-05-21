@@ -1,6 +1,8 @@
 
 import React from 'react';
+import useTitle from '../../../hooks/useTitle';
 const AddAToy = () => {
+    useTitle('addatoy')
     const handleAddAToy = event => {
         event.preventDefault();
         const form = event.target;
@@ -19,7 +21,7 @@ const AddAToy = () => {
 
         console.log(Seller, ToyName, Price, Rating, SubCategory, AvailableQuantity, PictureURL, SellerEmail, DetailDescription);
         console.log(data)
-        fetch('http://localhost:4000/toys', {
+        fetch('https://cooking-toys-server-alamin657.vercel.app/toys', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

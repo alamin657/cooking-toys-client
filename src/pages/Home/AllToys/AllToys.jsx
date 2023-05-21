@@ -3,13 +3,28 @@ import SignleAllToys from './SignleAllToys';
 
 const AllToys = () => {
     const [toys, setToys] = useState([])
+    const [searchText, setSearchText] = useState('')
     useEffect(() => {
-        fetch('http://localhost:4000/toys')
+        fetch('https://cooking-toys-server-alamin657.vercel.app/toys')
             .then(res => res.json())
             .then(data => setToys(data))
     }, [])
+
+    const handleSearchText = () => {
+        fetch(`https://cooking-toys-server-alamin657.vercel.app/cookingToysByText/${searchText}`)
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                setToys(data)
+            })
+    }
+
     return (
         <div className="overflow-x-auto">
+            <div>
+                <input type="text" onChange={(e) => setSearchText(e.target.value)} />{" "}
+                <button onClick={handleSearchText}>Search Text</button>
+            </div>
             <table className="table  table-compact w-full ">
                 <thead>
                     <tr >

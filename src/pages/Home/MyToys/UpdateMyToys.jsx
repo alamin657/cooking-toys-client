@@ -14,7 +14,7 @@ const UpdateMyToys = () => {
         const update = { Price, AvailableQuantity, DetailDescription }
         console.log(update)
 
-        fetch(`http://localhost:4000/toys/${_id}`, {
+        fetch(`https://cooking-toys-server-alamin657.vercel.app/toys/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

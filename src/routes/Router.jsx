@@ -40,7 +40,7 @@ const router = createBrowserRouter([
             {
                 path: '/toys/:id',
                 element: <PrivateRoute><SingleToyDetails></SingleToyDetails></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:4000/toys/${params.id}`)
+                loader: ({ params }) => fetch(`https://cooking-toys-server-alamin657.vercel.app/toys/${params.id}`)
             },
             {
                 path: '/addatoy',
@@ -53,7 +53,7 @@ const router = createBrowserRouter([
             {
                 path: '/updatetoys/:id',
                 element: <UpdateMyToys></UpdateMyToys>,
-                loader: ({ params }) => fetch(`http://localhost:4000/toys/${params.id}`)
+                loader: ({ params }) => fetch(`https://cooking-toys-server-alamin657.vercel.app//toys/${params.id}`)
             }
         ]
     }
