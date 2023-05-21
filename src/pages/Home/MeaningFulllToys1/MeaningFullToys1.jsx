@@ -2,7 +2,7 @@ import React from 'react';
 
 const MeaningFullToys1 = () => {
     return (
-        <div>
+        <div data-aos-duration="3000" data-aos="fade-up-left">
             <h1 className='text-4xl text-center text-orange-500 mt-2 font-bold'>Welcome to cookings toys</h1>
             <p className='text-center'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, numquam?</p>
             <div className='grid md:grid-cols-3 grid-cols-1'>
