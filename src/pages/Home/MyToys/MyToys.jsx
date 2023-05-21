@@ -4,10 +4,10 @@ import SingleMyToys from './SingleMyToys';
 import useTitle from '../../../hooks/useTitle';
 
 const MyToys = () => {
-    useTitle('mytoys')
+
     const { user } = useContext(AuthContext);
     const [cookingToys, setCookingToys] = useState([])
-
+    useTitle('mytoys')
     useEffect(() => {
         fetch(`https://cooking-toys-server-alamin657.vercel.app/mytoys/${user?.email}`)
             .then(res => res.json())

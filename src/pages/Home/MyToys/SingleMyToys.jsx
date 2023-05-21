@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { FaEdit, FaTrash } from "react-icons/fa";
 import { Link } from 'react-router-dom';
-// import Swal from 'sweetalert2';
 const SingleMyToys = ({ myToy, handleDelete }) => {
 
     const { _id, Seller, PictureURL, Rating, ToyName, SubCategory, Price, AvailableQuantity } = myToy;

@@ -1,10 +1,10 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Provider/AuthProvider';
 
 const Register = () => {
-    const [error, setError] = useState('')
     const { createUser, updateProfileUser } = useContext(AuthContext)
+    const { error, setError } = useContext(AuthContext)
     const handleRegister = event => {
         event.preventDefault();
         const form = event.target;
@@ -20,9 +20,10 @@ const Register = () => {
                     .then(result => {
                         const user = result?.user;
                         console.log(user)
+                        setError('')
                     })
                     .catch(error => {
-                        console.log(error)
+                        setError(error.message)
                     })
                 console.log(user);
                 setError('')

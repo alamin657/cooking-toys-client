@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import SignleAllToys from './SignleAllToys';
+import useTitle from '../../../hooks/useTitle';
 
 const AllToys = () => {
     const [toys, setToys] = useState([])
     const [searchText, setSearchText] = useState('')
+    useTitle('alltoys')
     useEffect(() => {
         fetch('https://cooking-toys-server-alamin657.vercel.app/toys')
             .then(res => res.json())

@@ -1,5 +1,4 @@
 import React from 'react';
-
 const MeaningFullToys2 = () => {
     return (
         <>
@@ -7,7 +6,7 @@ const MeaningFullToys2 = () => {
             <div className='grid grid-cols-1 md:grid-cols-3 gap-5  min-h-screen items-center justify-center bg-neutral-800'>
 
                 <div className='group relative items-center justify-center overflow-hidden cursor-pointer hover:shadow-xl hover:shadow-black/30 transition-shadow'>
-                    <div className='h-96 w-72'>
+                    <div className='h-96 w-full'>
                         <img className='w-full h-full object-cover group-hover:rotate-3 group-hover:scale-125 transition-transform duration-500' src="https://img.freepik.com/free-vector/kids-menu-design_24908-61055.jpg?size=626&ext=jpg&ga=GA1.1.1803344305.1673915057&semt=ais" alt="" />
                     </div>
                     <div className='absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70'></div>
@@ -20,7 +19,7 @@ const MeaningFullToys2 = () => {
                     </div>
                 </div>
                 <div className='group relative items-center justify-center overflow-hidden cursor-pointer hover:shadow-xl hover:shadow-black/30 transition-shadow'>
-                    <div className='h-96 w-72'>
+                    <div className='h-96 w-full'>
                         <img className='w-full h-full object-cover group-hover:rotate-3 group-hover:scale-125 transition-transform duration-500' src="https://img.freepik.com/free-vector/bakery-equipment-flat-design_23-2147556504.jpg?size=626&ext=jpg&ga=GA1.1.1803344305.1673915057&semt=ais" alt="" />
                     </div>
                     <div className='absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70'></div>
@@ -33,7 +32,7 @@ const MeaningFullToys2 = () => {
                     </div>
                 </div>
                 <div className='group relative items-center justify-center overflow-hidden cursor-pointer hover:shadow-xl hover:shadow-black/30 transition-shadow'>
-                    <div className='sm:h-full md:h-96 w-72'>
+                    <div className='h-96  w-full'>
                         <img className='w-full  h-full object-cover group-hover:rotate-3 group-hover:scale-125 transition-transform duration-500' src="https://img.freepik.com/premium-vector/collection-items-including-baby-bottle-spoon-bottle-spoon-bottle-spoon_727359-1.jpg?size=626&ext=jpg&ga=GA1.1.1803344305.1673915057&semt=ais" alt="" />
                     </div>
                     <div className='absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70'></div>

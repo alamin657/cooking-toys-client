@@ -15,7 +15,7 @@ const ShopByCategory = () => {
     console.log(categories)
     return (
         <Tabs>
-            <TabList className='flex gap-2 ml-4'>
+            <TabList data-aos-duration="3000" data-aos="fade-up-left" className='flex gap-2 ml-4'>
 
                 <Tab className='text-orange-400' onClick={() => setCategories("Remote Control")}>Remote Control</Tab>
                 <Tab className='text-cyan-300' onClick={() => setCategories("Musical Instruments")}>Musical Instruments</Tab>

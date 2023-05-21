@@ -1,8 +1,11 @@
 
-import React from 'react';
+import React, { useContext } from 'react';
 import useTitle from '../../../hooks/useTitle';
+import { AuthContext } from '../../../Provider/AuthProvider';
 const AddAToy = () => {
+
     useTitle('addatoy')
+    const { user } = useContext(AuthContext)
     const handleAddAToy = event => {
         event.preventDefault();
         const form = event.target;
@@ -36,7 +39,7 @@ const AddAToy = () => {
     }
     return (
         <div  >
-            <div className='bg-red-400 w-full h-full'>
+            <div className='bg-cyan-400 w-full h-full'>
                 <div className=" min-h-screen">
                     <div className="hero-content  ">
 
@@ -66,7 +69,7 @@ const AddAToy = () => {
 
                                 <div className=" flex gap-2">
                                     <input type="text" name='PictureURL' placeholder="PictureURL" className="input input-bordered" required />
-                                    <input type="text" name='SellerEmail' placeholder="SellerEmail" className="input input-bordered" required />
+                                    <input type="text" name='SellerEmail' placeholder="SellerEmail" readOnly defaultValue={user?.email} className="input input-bordered" required />
                                 </div>
                                 <input type="text" name='DetailDescription' placeholder="DetailDescription" className="input input-bordered" required />
                                 <div className="form-control mt-6">

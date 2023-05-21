@@ -13,7 +13,7 @@ const Header = () => {
 
     }
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-cyan-400">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -23,17 +23,17 @@ const Header = () => {
                         {
                             user ?
                                 <>
-                                    <li><Link to='/'>Home</Link></li>
-                                    <li><Link to='/alltoys'>All Toys</Link></li>
-                                    <li><Link to='/addatoy'>Add A Toy</Link></li>
-                                    <li><Link to='/blog'>Blog</Link></li>
-                                    <li><Link to='/mytoys'>My Toys</Link></li>
+                                    <li className='text-3xl font-bold'><Link to='/'>Home</Link></li>
+                                    <li className='text-2xl'><Link to='/alltoys'>All Toys</Link></li>
+                                    <li className='text-2xl'><Link to='/addatoy'>Add A Toy</Link></li>
+                                    <li className='text-2xl'><Link to='/blog'>Blog</Link></li>
+                                    <li className='text-2xl'><Link to='/mytoys'>My Toys</Link></li>
                                 </>
                                 :
                                 <>
-                                    <li><Link to='/'>Home</Link></li>
-                                    <li><Link to='/alltoys'>All Toys</Link></li>
-                                    <li><Link to='/blog'>Blog</Link></li>
+                                    <li className='text-2xl'><Link to='/'>Home</Link></li>
+                                    <li className='text-2xl'><Link to='/alltoys'>All Toys</Link></li>
+                                    <li className='text-2xl'><Link to='/blog'>Blog</Link></li>
                                 </>
                         }
                     </ul>
@@ -47,11 +47,11 @@ const Header = () => {
                     {
                         user ?
                             <>
-                                <li><Link to='/'>Home</Link></li>
-                                <li><Link to='/alltoys'>All Toys</Link></li>
-                                <li><Link to='/addatoy'>Add A Toy</Link></li>
-                                <li><Link to='/blog'>Blog</Link></li>
-                                <li><Link to='/mytoys'>My Toys</Link></li>
+                                <li className='text-2xl'><Link to='/'>Home</Link></li>
+                                <li className='text-2xl'><Link to='/alltoys'>All Toys</Link></li>
+                                <li className='text-2xl'><Link to='/addatoy'>Add A Toy</Link></li>
+                                <li className='text-2xl'><Link to='/blog'>Blog</Link></li>
+                                <li className='text-2xl'><Link to='/mytoys'>My Toys</Link></li>
                             </>
                             :
                             <>
@@ -63,14 +63,15 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end gap-1">
+
+                {
+                    user ? <button onClick={handleLogout} className=' bg-orange-400 rounded-full p-3'>SignOut</button> :
+                        <Link to='/login'><button className=' bg-orange-400 rounded-full p-3'>SignIn</button></Link>
+                }
                 {
                     user && <img title={user?.displayName} className="rounded-full w-8 mr-1" src={user?.photoURL}></img>
                 }
 
-                {
-                    user ? <button onClick={handleLogout} className="btn btn-active">SignOut</button> :
-                        <Link to='/login'><button className="btn btn-active">SignIn</button></Link>
-                }
             </div>
         </div>
     );

@@ -2,11 +2,12 @@ import React from 'react';
 const Gallery = () => {
     return (
 
-        <main>
-            <h2 className='text-center text-3xl mt-2'>Cooking toys photo gallery</h2>
-            <section  >
+        <main data-aos-duration="3000" data-aos="fade-up-left">
+            <h2 className='text-center  text-3xl mt-4 text-pink-500'>Welcome to Cooking toys photo gallery</h2>
+            <p className='text-center text-2xl mt-2 text-purple-400'>The cooking toys gallery section showcases a delightful collection of playsets and accessories designed to inspire  <br /> young    chefs. Each item in the gallery is carefully crafted to provide children with an immersive and interactive cooking experience...</p>
+            <section className='bg-cyan-400' >
 
-                <img className='w-full h-full' src="https://img.freepik.com/free-vector/woman-washing-dishes-sink-illustration_1308-2157.jpg?size=626&ext=jpg&ga=GA1.2.1803344305.1673915057&semt=ais" alt="" />
+                <img className='h-[50%] w-[50%] mx-auto' src="https://img.freepik.com/free-vector/woman-washing-dishes-sink-illustration_1308-2157.jpg?size=626&ext=jpg&ga=GA1.2.1803344305.1673915057&semt=ais" alt="" />
             </section>
             <section className='grid md:grid-cols-3'>
                 <div>
@@ -14,15 +15,10 @@ const Gallery = () => {
 
                 </div>
                 <div>
+
                     <img src="https://img.freepik.com/free-photo/top-view-play-dough-background-with-vegetables_23-2149700374.jpg?size=626&ext=jpg&ga=GA1.2.1803344305.1673915057&semt=ais" alt="" />
 
                 </div>
-                {/* <div>
-                    <img className='w-full h-full' src="https://img.freepik.com/free-vector/girls-cooking-design_1308-184.jpg?size=626&ext=jpg&ga=GA1.1.1803344305.1673915057&semt=ais" alt="" />
-
-                </div> */}
-
-
                 <div>
                     <img src="https://img.freepik.com/free-photo/top-view-play-dough-background-with-vegetables_23-2149700374.jpg?size=626&ext=jpg&ga=GA1.2.1803344305.1673915057&semt=ais" alt="" />
 

@@ -53,7 +53,7 @@ const router = createBrowserRouter([
             {
                 path: '/updatetoys/:id',
                 element: <UpdateMyToys></UpdateMyToys>,
-                loader: ({ params }) => fetch(`https://cooking-toys-server-alamin657.vercel.app//toys/${params.id}`)
+                loader: ({ params }) => fetch(`https://cooking-toys-server-alamin657.vercel.app/toys/${params.id}`)
             }
         ]
     }

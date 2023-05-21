@@ -1,9 +1,9 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Provider/AuthProvider';
 
 const Login = () => {
-    const [error, setError] = useState('')
+    const { error, setError } = useContext(AuthContext)
     const { signIn, googleProviderSignIn } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
@@ -24,7 +24,7 @@ const Login = () => {
                 navigate(from, { replace: true })
             })
             .catch(error => {
-                console.log(error)
+                setError(error.message)
             })
 
     }
@@ -32,10 +32,10 @@ const Login = () => {
         googleProviderSignIn()
             .then(result => {
                 const googleUser = result.user;
-                console.log(googleUser)
+                setError('')
             })
             .catch(error => {
-                console.log(error)
+                setError(error.message)
             })
     }
     return (
