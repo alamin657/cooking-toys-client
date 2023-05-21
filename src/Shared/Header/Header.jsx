@@ -27,7 +27,7 @@ const Header = () => {
                                     <li><Link to='/alltoys'>All Toys</Link></li>
                                     <li><Link to='/addatoy'>Add A Toy</Link></li>
                                     <li><Link to='/blog'>Blog</Link></li>
-                                    <li><a>My Toys</a></li>
+                                    <li><Link to='/mytoys'>My Toys</Link></li>
                                 </>
                                 :
                                 <>
@@ -36,7 +36,6 @@ const Header = () => {
                                     <li><Link to='/blog'>Blog</Link></li>
                                 </>
                         }
-                        {/* <li><Link to='/login'>Login</Link></li> */}
                     </ul>
                 </div>
                 <img className='w-12 h-12' src={logo} alt="" />
@@ -52,7 +51,7 @@ const Header = () => {
                                 <li><Link to='/alltoys'>All Toys</Link></li>
                                 <li><Link to='/addatoy'>Add A Toy</Link></li>
                                 <li><Link to='/blog'>Blog</Link></li>
-                                <li><a>My Toys</a></li>
+                                <li><Link to='/mytoys'>My Toys</Link></li>
                             </>
                             :
                             <>

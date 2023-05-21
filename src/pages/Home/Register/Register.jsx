@@ -18,7 +18,7 @@ const Register = () => {
                 const user = result.user;
                 updateProfileUser(name, photoURL, user)
                     .then(result => {
-                        const user = result.user;
+                        const user = result?.user;
                         console.log(user)
                     })
                     .catch(error => {

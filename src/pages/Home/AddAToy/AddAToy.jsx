@@ -1,9 +1,6 @@
 
 import React from 'react';
-// import { useForm } from "react-hook-form";
-
 const AddAToy = () => {
-    // const { register, handleSubmit, formState: { errors } } = useForm();
     const handleAddAToy = event => {
         event.preventDefault();
         const form = event.target;

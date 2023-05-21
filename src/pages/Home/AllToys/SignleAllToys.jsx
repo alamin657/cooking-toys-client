@@ -1,10 +1,7 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { AuthContext } from '../../../Provider/AuthProvider';
-
 const SignleAllToys = ({ toy }) => {
     const { _id, Seller, ToyName, SubCategory, Price, AvailableQuantity } = toy;
-    const { user } = useContext(AuthContext)
     return (
         <tr>
             <td>{Seller}</td>
