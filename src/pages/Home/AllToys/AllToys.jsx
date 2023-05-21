@@ -24,10 +24,10 @@ const AllToys = () => {
     return (
         <div className="overflow-x-auto">
             <div>
-                <input type="text" onChange={(e) => setSearchText(e.target.value)} />{" "}
-                <button onClick={handleSearchText}>Search Text</button>
+                <input className='ml-2 mt-4 border border-red-500' type="text" onChange={(e) => setSearchText(e.target.value)} />{" "}
+                <button className='bg-orange-500 rounded-full p-2' onClick={handleSearchText}>Search Text</button>
             </div>
-            <table className="table  table-compact w-full ">
+            <table className="table  table-compact w-full mt-2">
                 <thead>
                     <tr >
                         <th className='bg-teal-400'>Seller Name</th>
