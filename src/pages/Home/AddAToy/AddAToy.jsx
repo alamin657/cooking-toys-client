@@ -2,6 +2,7 @@
 import React, { useContext } from 'react';
 import useTitle from '../../../hooks/useTitle';
 import { AuthContext } from '../../../Provider/AuthProvider';
+import Swal from 'sweetalert2';
 const AddAToy = () => {
 
     useTitle('addatoy')
@@ -37,9 +38,17 @@ const AddAToy = () => {
             })
 
     }
+    const handlePost = () => {
+        Swal.fire({
+            title: 'Success!',
+            text: 'Mytoys Update  Successfully',
+            icon: 'success',
+            confirmButtonText: 'Cool'
+        })
+    }
     return (
         <div  >
-            <div className='bg-cyan-400 w-full h-full'>
+            <div className='bg-pink-400 w-full h-full'>
                 <div className=" min-h-screen">
                     <div className="hero-content  ">
 
@@ -73,7 +82,7 @@ const AddAToy = () => {
                                 </div>
                                 <input type="text" name='DetailDescription' placeholder="DetailDescription" className="input input-bordered" required />
                                 <div className="form-control mt-6">
-                                    <button className="btn btn-primary">Post</button>
+                                    <button onClick={handlePost} className="btn btn-primary">Post</button>
                                 </div>
                             </form>
                         </div>

@@ -14,8 +14,6 @@ const UpdateMyToys = () => {
         const AvailableQuantity = form.AvailableQuantity.value;
         const DetailDescription = form.DetailDescription.value;
         const update = { Price, AvailableQuantity, DetailDescription }
-        console.log(update)
-
         fetch(`https://cooking-toys-server-alamin657.vercel.app/toys/${_id}`, {
             method: 'PUT',
             headers: {
@@ -66,7 +64,6 @@ const UpdateMyToys = () => {
                     <input type="text" name='DetailDescription' defaultValue={DetailDescription} placeholder="DetailDescription" className="input input-bordered w-full" />
                 </label>
             </div>
-            {/* <input type="submit" value="Add Coffee" className="btn btn-block" /> */}
             <input type="submit" value='update mytoys' className='btn btn-primary mt-2' />
         </form>
     );

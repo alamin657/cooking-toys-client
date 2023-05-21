@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { FaEdit, FaTrash } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 const SingleMyToys = ({ myToy, handleDelete }) => {
 
     const { _id, Seller, PictureURL, Rating, ToyName, SubCategory, Price, AvailableQuantity } = myToy;
+
 
     return (
         <tr>
@@ -27,7 +28,6 @@ const SingleMyToys = ({ myToy, handleDelete }) => {
             <td>{Rating}</td>
             <th className='flex gap-1 mt-6'>
                 <Link to={`/updatetoys/${_id}`}><FaEdit></FaEdit></Link> <FaTrash onClick={() => handleDelete(_id)}></FaTrash>
-                {/* <Link to={`/toys/${__id}`}><button className="btn btn-ghost btn-xs">View details</button></Link> */}
             </th>
         </tr>
     );
