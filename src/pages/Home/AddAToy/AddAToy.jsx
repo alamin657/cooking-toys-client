@@ -47,8 +47,8 @@ const AddAToy = () => {
         })
     }
     return (
-        <div  >
-            <div className='bg-pink-400 w-full h-full'>
+        <div className='mt-1'>
+            <div className='bg-cyan-400 w-full h-full'>
                 <div className=" min-h-screen">
                     <div className="hero-content  ">
 

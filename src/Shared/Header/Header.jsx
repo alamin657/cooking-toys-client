@@ -2,16 +2,25 @@ import React, { useContext } from 'react';
 import logo from '../../assets/images/kitchen-set.png'
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
+import Swal from 'sweetalert2';
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
     const handleLogout = () => {
         logOut()
-            .then()
+            .then(result => {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'You are LogOut',
+                    showConfirmButton: false,
+                    timer: 2000
+                })
+            })
             .catch(error => {
                 console.log(error)
             })
 
     }
+
     return (
         <div className="navbar bg-cyan-400">
             <div className="navbar-start">
@@ -36,6 +45,7 @@ const Header = () => {
                                     <li className='text-2xl'><Link to='/blog'>Blog</Link></li>
                                 </>
                         }
+
                     </ul>
                 </div>
                 <img className='w-12 h-12' src={logo} alt="" />
@@ -44,6 +54,7 @@ const Header = () => {
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu  menu-horizontal px-1">
+
                     {
                         user ?
                             <>
@@ -63,6 +74,7 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end gap-1">
+
 
                 {
                     user ? <button onClick={handleLogout} className=' bg-orange-400 rounded-full p-3'>SignOut</button> :

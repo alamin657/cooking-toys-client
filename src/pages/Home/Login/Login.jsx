@@ -1,26 +1,30 @@
 import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Provider/AuthProvider';
+import Swal from 'sweetalert2';
 
 const Login = () => {
-    const { error, setError } = useContext(AuthContext)
-    const { signIn, googleProviderSignIn } = useContext(AuthContext);
+    const { signIn, googleProviderSignIn, error, setError } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
-    console.log(location);
     const from = location.state?.from?.pathname || '/'
+
     const handleLogin = event => {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password);
 
         signIn(email, password)
             .then(result => {
-                const loggedUser = result.user;
-                console.log(loggedUser)
+                const user = result.user;
                 setError('');
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Your LogIn Successfully',
+                    showConfirmButton: false,
+                    timer: 2000
+                })
                 navigate(from, { replace: true })
             })
             .catch(error => {
@@ -31,8 +35,14 @@ const Login = () => {
     const handleGoogle = () => {
         googleProviderSignIn()
             .then(result => {
-                const googleUser = result.user;
+                const user = result.user;
                 setError('')
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Your Google LogIn Successfully',
+                    showConfirmButton: false,
+                    timer: 2000
+                })
             })
             .catch(error => {
                 setError(error.message)

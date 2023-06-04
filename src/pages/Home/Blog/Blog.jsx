@@ -4,7 +4,7 @@ import useTitle from '../../../hooks/useTitle';
 const Blog = () => {
     useTitle('Blog')
     return (
-        <div data-aos-duration="3000" data-aos="fade-up-left">
+        <div>
             <div className='gap-2' >
                 <div className='border border-red-500 bg-slate-500 mt-2 p-4'>
                     <h2 className='text-3xl'>1.What is an access token and refresh token? How do they work and where should we store them on the client-side?</h2>
